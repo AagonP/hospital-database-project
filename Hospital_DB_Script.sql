@@ -4,11 +4,11 @@
 CREATE TABLE EMPLOYEE(
 	eid INT NOT NULL,
     bdate DATE,
-    name VARCHAR(30),
-    gender BOOL,
-    email VARCHAR(30),
+    name VARCHAR(100),
+    gender VARCHAR(1),
+    email VARCHAR(100),
     salary FLOAT,
-    address VARCHAR(30),
+    address VARCHAR(100),
     PRIMARY KEY (eid)
 );
 
@@ -18,8 +18,8 @@ CREATE TABLE NURSE(
 );
 
 CREATE TABLE BUILDING(
-	name VARCHAR(10) NOT NULL,
-    location VARCHAR(30),
+	name VARCHAR(100) NOT NULL,
+    location VARCHAR(100),
     PRIMARY KEY(name)
 );
 
@@ -32,7 +32,7 @@ CREATE TABLE ROOM(
 );
 
 CREATE TABLE ROOMTYPE(
-	room_type VARCHAR(10) NOT NULL,
+	room_type VARCHAR(20) NOT NULL,
     capacity INT,
     PRIMARY KEY (room_type)
 );
@@ -40,16 +40,16 @@ CREATE TABLE ROOMTYPE(
 CREATE TABLE DOCTOR(
 	eid INT NOT NULL,
     supervisor_id INT,
-    fname VARCHAR(30),
+    fname VARCHAR(100),
     PRIMARY KEY (eid)
 );
 
 CREATE TABLE FACULTY(
-	name VARCHAR(30) NOT NULL,
+	name VARCHAR(100) NOT NULL,
     manager_id INT,
     start_date DATE,
     end_date DATE,
-    location_address VARCHAR(30),
+    location_address VARCHAR(100),
     PRIMARY KEY(name)
 );
 
@@ -84,8 +84,8 @@ CREATE TABLE INPATIENT(
 
 CREATE TABLE PATIENT(
 	pid INT NOT NULL,
-    name VARCHAR(30),
-    gender BOOL,
+    name VARCHAR(100),
+    gender VARCHAR(1),
     bdate DATE,
     address VARCHAR(100),
     phone_number VARCHAR(100),
@@ -95,7 +95,7 @@ CREATE TABLE PATIENT(
 
 CREATE TABLE MEDICINE(
 	code INT NOT NULL,
-    name VARCHAR(100),
+    name VARCHAR(200),
     price FLOAT,
     PRIMARY KEY (code)
 );
@@ -135,7 +135,7 @@ CREATE TABLE APPOINTMENT(
 
 CREATE TABLE E_PHONE_NUMBERS (
 	eid INT NOT NULL,
-    phone_no INT NOT NULL,
+    phone_no VARCHAR(100) NOT NULL,
     PRIMARY KEY(eid, phone_no)
 );
 

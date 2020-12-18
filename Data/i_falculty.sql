@@ -1,0 +1,10 @@
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Anesthetics', '05910 Fremont Junction');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Breast Screening', '5 Eagan Park');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Cardiology', '0281 Elgar Hill');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Ear,nose and throat', '9 Laurel Hill');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Elderly services', '446 Muir Way');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Gastroenterology', '17853 Schurz Junction');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('General Surgery', '38 Morningstar Plaza');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Gynecology', '8 Florence Crossing');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Hematology', '49226 Fremont Court');
+INSERT INTO `hospital`.`faculty` (`name`, `location_address`) VALUES ('Neurology', '37438 Mcbride Pass');
