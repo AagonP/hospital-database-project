@@ -214,8 +214,8 @@ CREATE INDEX medicine_name ON MEDICINE(name);
 
 -- Create composite index for EXAMINATION.
 CREATE INDEX examination_pid_did ON EXAMINATION(pid, did);
-CREATE INDEX examination_did_exam_id ON EXAMINATION(did, exam_id);
+CREATE INDEX examination_did ON EXAMINATION(did);
 
 -- Create composite index for TREATMENT.
 CREATE INDEX treatment_pid_did ON TREATMENT(pid, did);
-CREATE INDEX treatment_did_tid ON TREATMENT(did, tid);
+CREATE INDEX treatment_did ON TREATMENT(did);
