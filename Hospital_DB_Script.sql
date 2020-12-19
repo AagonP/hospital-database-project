@@ -26,8 +26,8 @@ CREATE TABLE BUILDING(
 CREATE TABLE ROOM(
 	nid INT,
 	room_id INT NOT NULL,
-    bname VARCHAR(10) NOT NULL,
-    room_type VARCHAR(10),
+    bname VARCHAR(100) NOT NULL,
+    room_type VARCHAR(20),
     PRIMARY KEY (room_id, bname)
 );
 
@@ -79,6 +79,7 @@ CREATE TABLE TREATMENT_INCLUDE (
 CREATE TABLE INPATIENT(
 	pid INT NOT NULL,
     room_id INT,
+    bname VARCHAR(100),
     PRIMARY KEY (pid)
 );
 
@@ -88,7 +89,7 @@ CREATE TABLE PATIENT(
     gender VARCHAR(1),
     bdate DATE,
     address VARCHAR(100),
-    phone_number VARCHAR(100),
+    phone_number VARCHAR(20),
     anamnesis VARCHAR(1000),
     PRIMARY KEY (pid)
 );
@@ -135,7 +136,7 @@ CREATE TABLE APPOINTMENT(
 
 CREATE TABLE E_PHONE_NUMBERS (
 	eid INT NOT NULL,
-    phone_no VARCHAR(100) NOT NULL,
+    phone_no VARCHAR(20) NOT NULL,
     PRIMARY KEY(eid, phone_no)
 );
 
@@ -174,7 +175,7 @@ ADD FOREIGN KEY (tid, pid, did) REFERENCES TREATMENT (tid, pid, did) ON DELETE C
 ADD FOREIGN KEY (mcode) REFERENCES MEDICINE(code) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE INPATIENT
-ADD FOREIGN KEY (room_id) REFERENCES ROOM(room_id) ON DELETE SET NULL ON UPDATE CASCADE,
+ADD FOREIGN KEY (room_id, bname) REFERENCES ROOM(room_id, bname) ON DELETE SET NULL ON UPDATE CASCADE,
 ADD FOREIGN KEY (pid) REFERENCES PATIENT(pid) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE EXAMINATION
@@ -210,3 +211,11 @@ CREATE INDEX patient_name ON PATIENT(name);
 
 -- Create index for MEDICINE.name.
 CREATE INDEX medicine_name ON MEDICINE(name);
+
+-- Create composite index for EXAMINATION.
+CREATE INDEX examination_pid_did ON EXAMINATION(pid, did);
+CREATE INDEX examination_did_exam_id ON EXAMINATION(did, exam_id);
+
+-- Create composite index for TREATMENT.
+CREATE INDEX treatment_pid_did ON TREATMENT(pid, did);
+CREATE INDEX treatment_did_tid ON TREATMENT(did, tid);
