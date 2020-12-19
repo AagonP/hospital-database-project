@@ -2,7 +2,7 @@
 ****** Initiate tables with no reference.
 */
 CREATE TABLE EMPLOYEE(
-	eid INT NOT NULL,
+	eid INT NOT NULL AUTO_INCREMENT,
     bdate DATE,
     name VARCHAR(100),
     gender VARCHAR(1),
@@ -25,7 +25,7 @@ CREATE TABLE BUILDING(
 
 CREATE TABLE ROOM(
 	nid INT,
-	room_id INT NOT NULL,
+	room_id INT NOT NULL AUTO_INCREMENT,
     bname VARCHAR(100) NOT NULL,
     room_type VARCHAR(20),
     PRIMARY KEY (room_id, bname)
@@ -54,7 +54,7 @@ CREATE TABLE FACULTY(
 );
 
 CREATE TABLE TREATMENT (
-	tid INT NOT NULL,
+	tid INT NOT NULL AUTO_INCREMENT,
     pid INT NOT NULL,
     did INT NOT NULL,
     description VARCHAR(1000),
@@ -84,7 +84,7 @@ CREATE TABLE INPATIENT(
 );
 
 CREATE TABLE PATIENT(
-	pid INT NOT NULL,
+	pid INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100),
     gender VARCHAR(1),
     bdate DATE,
@@ -95,14 +95,14 @@ CREATE TABLE PATIENT(
 );
 
 CREATE TABLE MEDICINE(
-	code INT NOT NULL,
+	code INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(200),
     price FLOAT,
     PRIMARY KEY (code)
 );
 
 CREATE TABLE EXAMINATION(
-	exam_id INT NOT NULL,
+	exam_id INT NOT NULL AUTO_INCREMENT,
     pid INT NOT NULL,
     did INT NOT NULL,
     diagnosis VARCHAR(1000),
