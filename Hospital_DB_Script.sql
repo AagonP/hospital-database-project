@@ -219,3 +219,7 @@ CREATE INDEX examination_did ON EXAMINATION(did);
 -- Create composite index for TREATMENT.
 CREATE INDEX treatment_pid_did ON TREATMENT(pid, did);
 CREATE INDEX treatment_did ON TREATMENT(did);
+
+/*
+****** Create triggers.
+*/
